@@ -1,114 +1,78 @@
-<div align="center">
 
+This breaks Markdown rendering and causes alignment/formatting problems.
+
+Here is the **clean, correctly formatted, copy-paste-ready `README.md`**. I also fixed the table alignment, code blocks, spacing, links, and the missing **GitHub / LinkedIn / Instagram** section.
+
+```markdown
 # 🎬 Instagram Reels Downloader
 
 ### Download publicly accessible Instagram Reels, videos, audio & image assets through a simple web interface.
-
-<p>
-  <a href="https://github.com/SRIGANTH-K/reels-downloader">
-    <img src="https://img.shields.io/github/stars/SRIGANTH-K/reels-downloader?style=for-the-badge" alt="GitHub Stars">
-  </a>
-  <a href="https://github.com/SRIGANTH-K/reels-downloader">
-    <img src="https://img.shields.io/github/forks/SRIGANTH-K/reels-downloader?style=for-the-badge" alt="GitHub Forks">
-  </a>
-  <img src="https://img.shields.io/badge/Node.js-Backend-339933?style=for-the-badge&logo=node.js&logoColor=white" alt="Node.js">
-  <img src="https://img.shields.io/badge/Express.js-API-000000?style=for-the-badge&logo=express&logoColor=white" alt="Express.js">
-</p>
-
-<p>
-  <a href="#-features">Features</a> •
-  <a href="#-tech-stack">Tech Stack</a> •
-  <a href="#-installation">Installation</a> •
-  <a href="#-usage">Usage</a> •
-  <a href="#-project-structure">Structure</a>
-</p>
-
-</div>
 
 ---
 
 ## ✨ Features
 
-* 🎥 Download publicly accessible Instagram Reels
-* 🔗 Simple Instagram URL input
-* 🎵 Direct audio download support
-* 🖼️ Image asset support when available
-* ⚡ Lightweight Express backend
-* 🌐 Simple static frontend
-* 🛠️ Powered by `yt-dlp`
-* 🎬 Uses `FFmpeg` for media processing
-* 🔒 Environment-variable based configuration
-* 💻 Designed for local/self-hosted usage
+- 🎥 Download publicly accessible Instagram Reels
+- 🔗 Simple Instagram URL input
+- 🎵 Direct audio download support
+- 🖼️ Image asset support when available
+- ⚡ Lightweight Express backend
+- 🌐 Simple static frontend
+- 🛠️ Powered by `yt-dlp`
+- 🎬 Uses `FFmpeg` for media processing
+- 🔒 Environment-variable based configuration
+- 💻 Designed for local/self-hosted usage
 
 ---
 
 ## 🖥️ Preview
 
-> Add a screenshot of your application here.
-
-<div align="center">
-
-<img src="docs/screenshots/home.png" alt="Instagram Reels Downloader" width="900">
-
-</div>
+![Instagram Reels Downloader Preview](images/home.png)
 
 ### 🎥 Demo
 
-Add a short GIF or demo video here:
-
-```markdown
-![Demo](docs/demo.gif)
-```
-
-A short 5–10 second recording showing:
+[▶️ Watch Demo](video/Demo.mp4)
 
 **Paste URL → Fetch → Preview → Download**
-
-will make the repository significantly more attractive.
 
 ---
 
 ## 🏗️ Architecture
 
+![Instagram Reels Downloader Architecture](images/architecture.png)
+
+The application follows a simple client-server media-processing architecture:
+
 ```text
-                 ┌─────────────────────────┐
-                 │      Web Browser        │
-                 │      Frontend :3000     │
-                 └────────────┬────────────┘
-                              │
-                              │ HTTP API
-                              ▼
-                 ┌─────────────────────────┐
-                 │    Express Backend      │
-                 │      Backend :5000      │
-                 └────────────┬────────────┘
-                              │
-                              ▼
-                    ┌──────────────────┐
-                    │      yt-dlp      │
-                    │  Media Resolver  │
-                    └────────┬─────────┘
-                             │
-                             ▼
-                    ┌──────────────────┐
-                    │      FFmpeg      │
-                    │ Media Processing │
-                    └──────────────────┘
+Web Browser
+     │
+     │ HTTP API
+     ▼
+Express Backend
+     │
+     ▼
+   yt-dlp
+     │
+     ▼
+  FFmpeg
+     │
+     ▼
+ Download
 ```
 
 ---
 
 ## 🛠️ Tech Stack
 
-| Layer            | Technology                     |
-| ---------------- | ------------------------------ |
-| Frontend         | HTML, CSS, JavaScript          |
-| Backend          | Node.js                        |
-| API              | Express.js                     |
-| Media Resolver   | yt-dlp                         |
-| Media Processing | FFmpeg                         |
-| Configuration    | dotenv / environment variables |
-| Development      | Git + GitHub                   |
+| Layer | Technology |
+|:---|:---|
+| Frontend | HTML, CSS, JavaScript |
+| Backend | Node.js |
+| API | Express.js |
+| Media Resolver | `yt-dlp` |
+| Media Processing | `FFmpeg` |
+| Configuration | `dotenv` / Environment Variables |
+| Development | Git + GitHub |
 
 ---
 
@@ -127,6 +91,14 @@ reels-downloader/
 │   ├── server.js
 │   └── ...
 │
+├── images/
+│   ├── home.png
+│   ├── architecture.png
+│   └── workflow.png
+│
+├── video/
+│   └── Demo.mp4
+│
 ├── .env.example
 ├── .gitignore
 ├── package.json
@@ -139,10 +111,10 @@ reels-downloader/
 
 Before running the project, make sure you have:
 
-* [Node.js](https://nodejs.org/) installed
-* `yt-dlp` installed and available in your `PATH`
-* `FFmpeg` installed and available in your `PATH`
-* Git installed
+- [Node.js](https://nodejs.org/) installed
+- `yt-dlp` installed and available in your `PATH`
+- `FFmpeg` installed and available in your `PATH`
+- Git installed
 
 Check your installations:
 
@@ -228,6 +200,10 @@ Then open:
 
 ## 🔗 How It Works
 
+![Instagram Reels Downloader Workflow](images/workflow.png)
+
+The application processes a Reel through the following workflow:
+
 ```text
 1. Paste Instagram Reel URL
           ↓
@@ -248,14 +224,14 @@ Then open:
 
 ## 🔐 Environment Variables
 
-| Variable              | Description                   |
-| --------------------- | ----------------------------- |
-| `PORT`                | Backend server port           |
-| `TRUST_PROXY`         | Proxy configuration           |
-| `FRONTEND_URL`        | Frontend origin               |
-| `YT_DLP_PATH`         | Custom yt-dlp executable path |
-| `YT_DLP_COOKIES`      | Optional cookie configuration |
-| `YT_DLP_COOKIES_FILE` | Optional cookie file          |
+| Variable | Description |
+|:---|:---|
+| `PORT` | Backend server port |
+| `TRUST_PROXY` | Proxy configuration |
+| `FRONTEND_URL` | Frontend origin |
+| `YT_DLP_PATH` | Custom yt-dlp executable path |
+| `YT_DLP_COOKIES` | Optional cookie configuration |
+| `YT_DLP_COOKIES_FILE` | Optional cookie file |
 
 See `.env.example` for the available configuration.
 
@@ -281,11 +257,11 @@ Expected response:
 
 ## ⚠️ Limitations
 
-* Only publicly accessible Instagram Reel URLs are supported.
-* Download availability depends on what `yt-dlp` can resolve.
-* Instagram may change its platform behavior, which can affect downloading.
-* Some content may require authentication.
-* `yt-dlp` and FFmpeg must be correctly installed and accessible.
+- Only publicly accessible Instagram Reel URLs are supported.
+- Download availability depends on what `yt-dlp` can resolve.
+- Instagram may change its platform behavior, which can affect downloading.
+- Some content may require authentication.
+- `yt-dlp` and FFmpeg must be correctly installed and accessible.
 
 ---
 
@@ -301,17 +277,17 @@ This project is not affiliated with or endorsed by Instagram or Meta.
 
 ## 🔮 Future Improvements
 
-* [ ] Responsive UI improvements
-* [ ] Download progress indicator
-* [ ] Media preview before downloading
-* [ ] Better error handling
-* [ ] Automatic quality selection
-* [ ] Download history
-* [ ] Queue-based processing
-* [ ] Docker support
-* [ ] Production deployment configuration
-* [ ] Automated tests
-* [ ] CI/CD with GitHub Actions
+- 📱 Responsive UI improvements
+- 📊 Download progress indicator
+- 🎬 Media preview before downloading
+- 🛡️ Better error handling
+- ⚙️ Automatic quality selection
+- 🕘 Download history
+- 📦 Queue-based processing
+- 🐳 Docker support
+- 🌐 Production deployment configuration
+- 🧪 Automated tests
+- 🔄 CI/CD with GitHub Actions
 
 ---
 
@@ -319,53 +295,71 @@ This project is not affiliated with or endorsed by Instagram or Meta.
 
 Contributions, suggestions, and improvements are welcome.
 
-1. Fork the repository
-2. Create a feature branch
+### 1. Fork the repository
+
+### 2. Create a feature branch
 
 ```bash
 git checkout -b feature/your-feature
 ```
 
-3. Commit your changes
+### 3. Commit your changes
 
 ```bash
 git commit -m "Add your feature"
 ```
 
-4. Push the branch
+### 4. Push the branch
 
 ```bash
 git push origin feature/your-feature
 ```
 
-5. Open a Pull Request
+### 5. Open a Pull Request
 
 ---
 
 ## 👨‍💻 Author
 
-<div align="center">
-
 ### Sri Ganth K
 
-B.Tech — Artificial Intelligence & Data Science
+[![GitHub](https://img.shields.io/badge/GitHub-SRIGANTH--K-181717?style=for-the-badge&logo=github)](https://github.com/SRIGANTH-K)
 
-<a href="https://github.com/SRIGANTH-K">
-  <img src="https://img.shields.io/badge/GitHub-SRIGANTH--K-181717?style=for-the-badge&logo=github" alt="GitHub">
-</a>
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Sri%20Ganth%20K-0A66C2?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/sri-ganth-k/)
 
-<a href="https://www.linkedin.com/in/sri-ganth-k">
-  <img src="https://img.shields.io/badge/LinkedIn-Sri%20Ganth%20K-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn">
-</a>
-
-</div>
+[![Instagram](https://img.shields.io/badge/Instagram-sri__ganth__k-E4405F?style=for-the-badge&logo=instagram)](https://www.instagram.com/sri_ganth_k/)
 
 ---
-
-<div align="center">
 
 ⭐ If you find this project useful, consider giving it a star!
 
 **Built with Node.js + Express + yt-dlp + FFmpeg**
+```
 
-</div>
+### Important folder structure
+
+Make sure your GitHub repository actually contains these files at these exact paths:
+
+```text
+reels-downloader/
+│
+├── images/
+│   ├── home.png
+│   ├── architecture.png
+│   └── workflow.png
+│
+├── video/
+│   └── Demo.mp4
+│
+└── README.md
+```
+
+**One important GitHub detail:** Markdown image paths are relative to the `README.md` location. So if `README.md` is in the repository root, `images/home.png` is correct.
+
+Also, your original `reels-downloader\images\workflow\.png` path was incorrect. The correct path is:
+
+```text
+images/workflow.png
+```
+
+And similarly, use `/` rather than Windows `\` in GitHub Markdown paths.
