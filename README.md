@@ -9,7 +9,7 @@
 🚀 **Try the live application:**  
 
 
-**Live Website:** [HD Insta Media Downloader](https://hdinstadownloader.vercel.app)
+**Live Website:** [HD Insta Reels Downloader](https://hdinstadownloader.vercel.app)
 
 ---
 
