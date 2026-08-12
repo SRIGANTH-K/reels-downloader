@@ -7,9 +7,9 @@
 ## 🌐 Live Demo
 
 🚀 **Try the live application:**  
-👉 [https://hdinstamediadownloader.vercel.app](https://hdinstamediadownloader.vercel.app)
+👉 [https://hdinstadownloader.vercel.app](https://hdinstamediadownloader.vercel.app)
 
-**Live Website:** [HD Insta Media Downloader](https://hdinstamediadownloader.vercel.app)
+**Live Website:** [HD Insta Media Downloader](https://hdinstadownloader.vercel.app)
 
 ---
 
