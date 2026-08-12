@@ -33,26 +33,11 @@
 
 ## 🏗️ Architecture
 
-![Instagram Reels Downloader Architecture](images/architecture.png)
-
 The application follows a simple client-server media-processing architecture:
 
-```text
-Web Browser
-     │
-     │ HTTP API
-     ▼
-Express Backend
-     │
-     ▼
-   yt-dlp
-     │
-     ▼
-  FFmpeg
-     │
-     ▼
- Download
-```
+![Instagram Reels Downloader Architecture](images/architecture.png)
+
+
 
 ---
 
@@ -194,25 +179,11 @@ Then open:
 
 ## 🔗 How It Works
 
-![Instagram Reels Downloader Workflow](images/workflow.png)
-
 The application processes a Reel through the following workflow:
 
-```text
-1. Paste Instagram Reel URL
-          ↓
-2. Frontend sends request
-          ↓
-3. Express API receives URL
-          ↓
-4. yt-dlp resolves available media
-          ↓
-5. FFmpeg processes media when required
-          ↓
-6. Download options are returned
-          ↓
-7. User downloads the selected media
-```
+![Instagram Reels Downloader Workflow](images/workflow.png)
+
+
 
 ---
 
