@@ -1,9 +1,3 @@
-
-This breaks Markdown rendering and causes alignment/formatting problems.
-
-Here is the **clean, correctly formatted, copy-paste-ready `README.md`**. I also fixed the table alignment, code blocks, spacing, links, and the missing **GitHub / LinkedIn / Instagram** section.
-
-```markdown
 # 🎬 Instagram Reels Downloader
 
 ### Download publicly accessible Instagram Reels, videos, audio & image assets through a simple web interface.
@@ -334,32 +328,3 @@ git push origin feature/your-feature
 ⭐ If you find this project useful, consider giving it a star!
 
 **Built with Node.js + Express + yt-dlp + FFmpeg**
-```
-
-### Important folder structure
-
-Make sure your GitHub repository actually contains these files at these exact paths:
-
-```text
-reels-downloader/
-│
-├── images/
-│   ├── home.png
-│   ├── architecture.png
-│   └── workflow.png
-│
-├── video/
-│   └── Demo.mp4
-│
-└── README.md
-```
-
-**One important GitHub detail:** Markdown image paths are relative to the `README.md` location. So if `README.md` is in the repository root, `images/home.png` is correct.
-
-Also, your original `reels-downloader\images\workflow\.png` path was incorrect. The correct path is:
-
-```text
-images/workflow.png
-```
-
-And similarly, use `/` rather than Windows `\` in GitHub Markdown paths.
