@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Instagram Reels Downloader</title>
+    <meta
+      name="description"
+      content="Paste an Instagram Reel link to fetch elegant download options instantly."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script>
+      window.HD_MEDIA_API_BASE =
+        location.hostname === "localhost" ||
+        location.hostname === "127.0.0.1" ||
+        location.hostname === ""
+          ? "http://localhost:5000"
+          : "";
+    </script>
+    <script src="https://unpkg.com/@phosphor-icons/web@2.0.3/src/index.js" defer></script>
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="header">
+        <div class="header-inner">
+          <a class="brand" href="#top" aria-label="Reel Vault home">
+            <span class="brand-mark">
+              <i class="ph-fill ph-instagram-logo"></i>
+            </span>
+            <span class="brand-copy">
+              <strong>Reel Vault</strong>
+              <span>Fast, polished saves for reels only</span>
+            </span>
+          </a>
+
+          <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+            <i class="ph-bold ph-moon" id="themeIcon"></i>
+          </button>
+        </div>
+      </header>
+
+      <main class="main" id="top">
+        <section class="hero">
+          <div class="hero-copy">
+            <p class="eyebrow">Built for Instagram links only</p>
+            <h1 class="hero-title">Save Instagram reels with a cinematic, faster flow.</h1>
+            <p class="hero-sub">
+              Paste a public Instagram Reel URL and get a polished set of download options in one place.
+            </p>
+
+            <div class="hero-pills">
+              <span class="hero-pill"><i class="ph-bold ph-film-strip"></i> Reels only</span>
+              <span class="hero-pill"><i class="ph-bold ph-bolt"></i> Fast fetch</span>
+              <span class="hero-pill"><i class="ph-bold ph-download-simple"></i> Direct save</span>
+            </div>
+
+            <div class="feature-strip" aria-label="Highlights">
+              <div class="feature-item">
+                <span class="feature-kicker">01</span>
+                <strong>Paste a reel link</strong>
+                <p>Drop in a public reel URL and let the app inspect it instantly.</p>
+              </div>
+              <div class="feature-item">
+                <span class="feature-kicker">02</span>
+                <strong>Choose your version</strong>
+                <p>Pick the format that looks best for your save or archive.</p>
+              </div>
+              <div class="feature-item">
+                <span class="feature-kicker">03</span>
+                <strong>Download cleanly</strong>
+                <p>Keep the flow focused with a simple, elegant download action.</p>
+              </div>
+            </div>
+          </div>
+
+          <aside class="hero-panel">
+            <div class="panel-topline">
+              <span class="panel-chip">Curated for reels</span>
+              <span class="panel-status"><i class="ph-fill ph-sparkle"></i> Live fetch</span>
+            </div>
+
+            <div class="panel-screen">
+              <div class="panel-screen-glow"></div>
+              <div class="panel-screen-inner">
+                <p class="panel-label">How it works</p>
+                <ol class="steps">
+                  <li>Copy a public Instagram Reel link.</li>
+                  <li>Paste it below and fetch the available media.</li>
+                  <li>Choose the quality you want to download.</li>
+                </ol>
+              </div>
+            </div>
+
+            <p class="panel-note">
+              Designed for a focused, distraction-free reel download flow.
+            </p>
+          </aside>
+        </section>
+
+        <section class="workspace">
+          <div class="workspace-main">
+            <section class="composer">
+              <div class="composer-header">
+                <div>
+                  <p class="section-kicker">Paste Link</p>
+                  <h2 class="composer-title">A cleaner reel download workspace</h2>
+                </div>
+                <p class="composer-subtitle">One paste, one fetch, one focused set of options.</p>
+              </div>
+
+              <form class="input-form" id="fetchForm">
+                <label class="field-label" for="urlInput">Instagram URL</label>
+                <div class="input-wrap">
+                  <i class="ph-bold ph-link input-icon"></i>
+                  <input
+                    type="url"
+                    id="urlInput"
+                    class="url-input"
+                    placeholder="https://www.instagram.com/reel/..."
+                    autocomplete="off"
+                    spellcheck="false"
+                    required
+                  />
+                  <button type="button" class="paste-btn" id="pasteBtn" title="Paste from clipboard">
+                    <i class="ph-bold ph-clipboard-text"></i>
+                    <span>Paste</span>
+                  </button>
+                </div>
+
+                <div class="helper-row">
+                  <div class="helper-copy">
+                    Supports public Instagram reels only. Private reels cannot be downloaded.
+                  </div>
+                  <button type="submit" class="fetch-btn" id="fetchBtn">
+                    <i class="ph-bold ph-arrow-circle-down"></i>
+                    <span>Get Download Options</span>
+                  </button>
+                </div>
+              </form>
+
+              <div class="examples" aria-label="Instagram URL examples">
+                <span class="example-chip">/reel/...</span>
+              </div>
+            </section>
+
+            <div class="status-wrap">
+              <div class="spinner-wrap hidden" id="spinner">
+                <div class="spinner"></div>
+                <p>Checking the Instagram link and loading download choices...</p>
+              </div>
+
+              <div class="error-banner hidden" id="errorBanner">
+                <i class="ph-bold ph-warning-circle"></i>
+                <span id="errorMsg">Something went wrong.</span>
+                <button class="error-close" id="errorClose" aria-label="Dismiss">
+                  <i class="ph-bold ph-x"></i>
+                </button>
+              </div>
+            </div>
+
+            <section class="result-card hidden" id="resultCard">
+              <div class="result-head">
+                <div class="media-preview">
+                  <img id="thumbnail" src="" alt="Instagram preview" class="thumbnail" />
+                  <div class="media-meta">
+                    <div class="meta-row">
+                      <span class="result-kicker" id="mediaPlatform">Instagram</span>
+                      <span class="content-chip" id="contentType">Reel</span>
+                    </div>
+                    <h2 class="media-title" id="mediaTitle"></h2>
+                    <p class="media-hint">
+                      Pick the version you want. Some higher-quality options may take a little longer to prepare.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="result-aside">
+                  <p class="result-aside-label">Ready to save</p>
+                  <p class="result-aside-value" id="formatCount">0 options</p>
+                  <p class="result-aside-note">Select a version below to download it directly.</p>
+                </div>
+              </div>
+
+              <div class="formats-section">
+                <div class="section-heading">
+                  <div>
+                    <p class="section-kicker">Download Options</p>
+                    <h3>Available reel versions</h3>
+                  </div>
+                </div>
+                <div class="formats-grid" id="formatsGrid"></div>
+              </div>
+            </section>
+          </div>
+
+          <aside class="workspace-side">
+            <section class="cinematic-band" aria-label="Product highlights">
+              <div class="band-card">
+                <span class="band-label">Minimal</span>
+                <strong>Purpose-built for reel downloads</strong>
+                <p>A streamlined interface that keeps the whole action centered on the link.</p>
+              </div>
+              <div class="band-card">
+                <span class="band-label">Responsive</span>
+                <strong>Feels polished on desktop and mobile</strong>
+                <p>Layouts breathe, cards stack cleanly, and the action stays easy to find.</p>
+              </div>
+              <div class="band-card">
+                <span class="band-label">Fast</span>
+                <strong>Clear states and immediate feedback</strong>
+                <p>Loading, errors, and results are all presented with a sharper visual rhythm.</p>
+              </div>
+            </section>
+          </aside>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <p>Instagram Reels Downloader for public reels only. Private account content is not supported.</p>
+      </footer>
+    </div>
+
+    <div class="toast hidden" id="toast"></div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

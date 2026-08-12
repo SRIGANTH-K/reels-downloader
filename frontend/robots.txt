@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://hdinstadownloader.vercel.app/sitemap.xml
