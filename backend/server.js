@@ -97,10 +97,10 @@ function buildInstagramAuthMessage(type) {
       : "Instagram is blocking anonymous access to this post right now.";
 
   if (YT_DLP_COOKIES || YT_DLP_COOKIES_FILE || YT_DLP_COOKIES_FROM_BROWSER) {
-    return `${baseMessage} Refresh the cookies configured on Render and redeploy the backend.`;
+    return `${baseMessage} Refresh the cookies configured in your environment.`;
   }
 
-  return `${baseMessage} Add logged-in Instagram cookies to Render with YT_DLP_COOKIES or YT_DLP_COOKIES_FILE.`;
+  return `${baseMessage} Add logged-in Instagram cookies with YT_DLP_COOKIES or YT_DLP_COOKIES_FILE.`;
 }
 
 function heightToLabel(h) {

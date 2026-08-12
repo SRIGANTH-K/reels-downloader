@@ -1,13 +1,12 @@
 # Instagram Reels Downloader
 
-A local-first Instagram Reels downloader with a small Express backend and a static frontend.
+A local Instagram Reels downloader with a small Express backend and a static frontend.
 
 ## What it does
 
 - Accepts Instagram links only
 - Supports public reels when `yt-dlp` can resolve them
 - Shows direct download options for video, audio, and image assets
-- Runs locally without ads, trackers, or bundled monetization scripts
 
 ## Project structure
 
@@ -28,11 +27,12 @@ Install these on your machine before testing real Instagram downloads:
 Optional backend environment variables:
 
 - `PORT`
-- `TRUST_PROXY` set to `1` on Render
+- `TRUST_PROXY`
 - `FRONTEND_URL`
 - `YT_DLP_PATH`
+- `YT_DLP_COOKIES` or `YT_DLP_COOKIES_FILE` if Instagram needs authenticated access
 
-Copy `.env.example` to `.env` for local values if you use a dotenv loader or deployment platform environment settings.
+Copy `.env.example` to `.env` if you want a local reference file for your environment values.
 
 ## Install dependencies
 
@@ -102,8 +102,6 @@ The frontend is hardcoded to call the local backend at:
 ```text
 http://localhost:5000
 ```
-
-For deployment, set `window.HD_MEDIA_API_BASE` in `frontend/index.html` or serve the frontend behind the same origin as the API.
 
 ## Local checklist
 
